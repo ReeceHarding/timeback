@@ -850,7 +850,7 @@ export default function HeroGeometric({
                 </span>
               </h2>
               <p className="text-base md:text-lg text-white/60 mb-8 leading-relaxed font-light max-w-3xl mx-auto">
-                TimeBack is an AI-powered Education Operating System that gives students hours of their day back. 
+                TimeBack is an AI powered Education Operating System that gives students hours of their day back. 
                 Our kids learn 2.47x faster in just 2 hours instead of 6.
               </p>
             </motion.div>
@@ -968,7 +968,7 @@ export default function HeroGeometric({
                 </motion.div>
               </motion.div>
 
-              {/* Real-Time AI Coaching */}
+              {/* Real Time AI Coaching */}
               <motion.div
                 {...getMobileAwareAnimationProps()}
                 className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
@@ -979,7 +979,7 @@ export default function HeroGeometric({
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Always-On Personal AI Tutoring</h4>
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Always On Personal AI Tutoring</h4>
                   </div>
                   <motion.div
                     animate={{ rotate: specialCasesOpenIndex === 'ai-coaching' ? 180 : 0 }}
@@ -1003,7 +1003,7 @@ export default function HeroGeometric({
                   <div className="px-6 md:px-8 pb-6">
                     <div className="space-y-4">
                       <p className="text-white/60 text-sm leading-relaxed">
-                        StudyReel watches every student work in real-time. Like having a world-class tutor sitting next to each kid, 
+                        StudyReel watches every student work in real time. Like having a world class tutor sitting next to each kid, 
                         providing instant feedback, catching mistakes immediately, and adjusting difficulty on the fly.
                       </p>
                       <ul className="space-y-2 text-white/60 text-sm">
@@ -1040,7 +1040,7 @@ export default function HeroGeometric({
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">True Mastery, Not Time-Based Learning</h4>
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">True Mastery, Not Time Based Learning</h4>
                   </div>
                   <motion.div
                     animate={{ rotate: specialCasesOpenIndex === 'mastery-system' ? 180 : 0 }}
@@ -1231,7 +1231,7 @@ export default function HeroGeometric({
             >
               <h3 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">The Daily Experience</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <MobileCollapsibleSection title="Morning: 2 Hours of AI-Powered Learning" defaultOpen={false}>
+                <MobileCollapsibleSection title="Morning: 2 Hours of AI Powered Learning" defaultOpen={false}>
                   <ul className="space-y-3 text-white/60 text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-blue-400 mt-1">▸</span>
@@ -1243,11 +1243,11 @@ export default function HeroGeometric({
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-blue-400 mt-1">▸</span>
-                      <span><strong className="text-white/80">Real-Time Help:</strong> The moment a student struggles, AI provides hints, explanations, or easier problems.</span>
+                      <span><strong className="text-white/80">Real Time Help:</strong> The moment a student struggles, AI provides hints, explanations, or easier problems.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-blue-400 mt-1">▸</span>
-                      <span><strong className="text-white/80">Progress Tracking:</strong> Students see their achievements unlock in real-time as they master concepts.</span>
+                      <span><strong className="text-white/80">Progress Tracking:</strong> Students see their achievements unlock in real time as they master concepts.</span>
                     </li>
                   </ul>
                 </MobileCollapsibleSection>
@@ -1491,7 +1491,7 @@ export default function HeroGeometric({
                   {...getMobileAwareAnimationProps()}
                   className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6 md:p-8"
                 >
-                  <h3 className="text-xl font-semibold text-white/90 mb-4">The Original Study (3 Minutes)</h3>
+                  <h3 className="text-xl font-semibold text-white/90 mb-4">The Original Study (35 seconds)</h3>
                   <div className="aspect-video rounded-lg overflow-hidden bg-black/50 mb-4">
                     <StreamVideo
                       videoKey="learningScience"
