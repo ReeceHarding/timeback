@@ -1772,11 +1772,11 @@ export default function HeroGeometric({
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white/95 to-gray-300">
-                  The Numbers Don't Lie
+                  The Evidence We've Gathered
                 </span>
               </h2>
               <p className="text-base md:text-lg text-white/60 mb-8 leading-relaxed font-light max-w-3xl mx-auto">
-                Real kids. Real tests. Real results from Alpha School in Texas.
+                Real students. Real progress. Ten years of data from Alpha School, independently verified by MAP, SAT, and AP testing.
               </p>
             </motion.div>
 
@@ -1788,7 +1788,7 @@ export default function HeroGeometric({
               >
                 <div className="text-5xl md:text-6xl font-bold text-blue-400 mb-4">99th</div>
                 <h3 className="text-xl font-semibold text-white/90 mb-2">National Percentile</h3>
-                <p className="text-white/60 text-sm">Our average student beats 99% of American kids</p>
+                <p className="text-white/60 text-sm">Average student achievement on MAP testing</p>
               </motion.div>
 
               <motion.div
@@ -1796,8 +1796,8 @@ export default function HeroGeometric({
                 className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8"
               >
                 <div className="text-5xl md:text-6xl font-bold text-blue-400 mb-4">2.47x</div>
-                <h3 className="text-xl font-semibold text-white/90 mb-2">Faster Learning</h3>
-                <p className="text-white/60 text-sm">Kids master the same material 2.47x faster</p>
+                <h3 className="text-xl font-semibold text-white/90 mb-2">Learning Velocity</h3>
+                <p className="text-white/60 text-sm">Students progress through curriculum more efficiently</p>
               </motion.div>
 
               <motion.div
@@ -1805,13 +1805,170 @@ export default function HeroGeometric({
                 className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8"
               >
                 <div className="text-5xl md:text-6xl font-bold text-blue-400 mb-4">1470+</div>
-                <h3 className="text-xl font-semibold text-white/90 mb-2">SAT Scores</h3>
-                <p className="text-white/60 text-sm">446 points above the national average</p>
+                <h3 className="text-xl font-semibold text-white/90 mb-2">Average SAT Score</h3>
+                <p className="text-white/60 text-sm">High school graduates (National avg: 1028)</p>
               </motion.div>
             </div>
 
+            {/* NEW: The Brownsville Miracle */}
+            <motion.div
+              {...getMobileAwareAnimationProps()}
+              className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 mb-12"
+            >
+              <h3 className="text-2xl font-semibold text-white/90 mb-6">A Story from Brownsville: Hope for Every Community</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="text-center">
+                  <h4 className="text-lg font-medium text-white/80 mb-4">Math Progress</h4>
+                  <div className="flex items-center justify-center gap-4 mb-2">
+                    <div className="text-3xl font-bold text-white/40">31st</div>
+                    <svg width="40" height="20" viewBox="0 0 40 20" className="text-blue-400">
+                      <path d="M5 10 L30 10 M25 5 L35 10 L25 15" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    </svg>
+                    <div className="text-4xl font-bold text-blue-400">84th</div>
+                  </div>
+                  <p className="text-white/60 text-sm">percentile growth in one year</p>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-lg font-medium text-white/80 mb-4">Reading Progress</h4>
+                  <div className="flex items-center justify-center gap-4 mb-2">
+                    <div className="text-3xl font-bold text-white/40">31st</div>
+                    <svg width="40" height="20" viewBox="0 0 40 20" className="text-blue-400">
+                      <path d="M5 10 L30 10 M25 5 L35 10 L25 15" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    </svg>
+                    <div className="text-4xl font-bold text-blue-400">71st</div>
+                  </div>
+                  <p className="text-white/60 text-sm">percentile growth in one year</p>
+                </div>
+              </div>
+              <p className="text-white/50 text-sm mt-6 text-center">
+                Brownsville is one of our most economically challenged districts. These results show that 
+                <br />every child deserves access to personalized learning, regardless of their circumstances.
+              </p>
+            </motion.div>
+
             {/* Collapsible Sections */}
             <div className="space-y-4 mb-12">
+              {/* NEW: The Time Paradox */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'time-paradox' ? null : 'time-paradox')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">The Time Paradox: Less Time, Better Results</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'time-paradox' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'time-paradox' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'time-paradox' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="bg-white/[0.02] rounded-xl p-4 mb-4">
+                      <p className="text-white/80 font-medium mb-2">Average Daily Academic Time:</p>
+                      <div className="text-3xl font-bold text-blue-400 mb-1">1 hour 47 minutes</div>
+                      <p className="text-white/50 text-sm">Not a single student exceeds 3 hours</p>
+                    </div>
+                    <p className="text-white/60 text-sm leading-relaxed">
+                      We understand it sounds impossible. How can less time lead to better results?<br /><br />
+                      The answer lies in efficiency: personalized pacing means no waiting for others, 
+                      no repeating what you already know, and no busy work. Every minute counts 
+                      when it's tailored exactly to where each child needs to grow.
+                    </p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* NEW: Advanced Students Breaking Limits */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'advanced-breaking-limits' ? null : 'advanced-breaking-limits')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">When Students Can Learn at Their Own Pace</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'advanced-breaking-limits' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'advanced-breaking-limits' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'advanced-breaking-limits' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm mb-4">
+                        <thead>
+                          <tr className="border-b border-white/10">
+                            <th className="text-left text-white/60 font-medium py-2 px-4">Student</th>
+                            <th className="text-center text-white/60 font-medium py-2 px-4">Age Grade</th>
+                            <th className="text-center text-white/60 font-medium py-2 px-4">Knowledge Grade</th>
+                            <th className="text-center text-white/60 font-medium py-2 px-4">Years Ahead</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="border-b border-white/5">
+                            <td className="text-white/80 py-3 px-4">Mira</td>
+                            <td className="text-center text-white/60 py-3 px-4">4th</td>
+                            <td className="text-center text-blue-400 font-medium py-3 px-4">11th</td>
+                            <td className="text-center text-green-400 font-bold py-3 px-4">+7</td>
+                          </tr>
+                          <tr className="border-b border-white/5 bg-white/[0.02]">
+                            <td className="text-white/80 py-3 px-4">Charlie</td>
+                            <td className="text-center text-white/60 py-3 px-4">4th</td>
+                            <td className="text-center text-blue-400 font-medium py-3 px-4">10th</td>
+                            <td className="text-center text-green-400 font-bold py-3 px-4">+6</td>
+                          </tr>
+                          <tr className="border-b border-white/5">
+                            <td className="text-white/80 py-3 px-4">Aaron</td>
+                            <td className="text-center text-white/60 py-3 px-4">6th</td>
+                            <td className="text-center text-blue-400 font-medium py-3 px-4">12th</td>
+                            <td className="text-center text-green-400 font-bold py-3 px-4">+6</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p className="text-white/50 text-sm">
+                      These students were often under-challenged in traditional settings. With personalized pacing,
+                      they're finally able to learn at their natural speed and reach their full potential.
+                    </p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
               {/* Every Type of Student Thrives */}
               <motion.div
                 {...getMobileAwareAnimationProps()}
@@ -1848,20 +2005,24 @@ export default function HeroGeometric({
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                       <div className="text-center">
                         <div className="text-3xl font-bold text-blue-400 mb-2">3.9x</div>
-                        <p className="text-white/80 font-medium mb-1">Gifted Kids</p>
+                        <p className="text-white/80 font-medium mb-1">Top 20% of Students</p>
                         <p className="text-white/60 text-sm">Learn 3.9x faster when not held back</p>
                       </div>
                       <div className="text-center">
                         <div className="text-3xl font-bold text-blue-400 mb-2">2.6x</div>
-                        <p className="text-white/80 font-medium mb-1">Regular Kids</p>
+                        <p className="text-white/80 font-medium mb-1">Middle 60% of Students</p>
                         <p className="text-white/60 text-sm">Learn 2.6x faster with personal help</p>
                       </div>
                       <div className="text-center">
                         <div className="text-3xl font-bold text-blue-400 mb-2">2.2x</div>
-                        <p className="text-white/80 font-medium mb-1">Every Kid</p>
-                        <p className="text-white/60 text-sm">Minimum 2.2x improvement for all</p>
+                        <p className="text-white/80 font-medium mb-1">Bottom 20% of Students</p>
+                        <p className="text-white/60 text-sm">Still learn 2.2x faster than peers</p>
                       </div>
                     </div>
+                    <p className="text-white/50 text-sm mt-4 text-center">
+                      We believe every child has untapped potential. Our data shows consistent growth 
+                      across all starting points - because personalized learning meets each child where they are.
+                    </p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -1877,7 +2038,7 @@ export default function HeroGeometric({
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Kids Catching Up</h4>
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Supporting Students Who Need to Catch Up</h4>
                   </div>
                   <motion.div
                     animate={{ rotate: specialCasesOpenIndex === 'kids-catching-up' ? 180 : 0 }}
@@ -1899,13 +2060,131 @@ export default function HeroGeometric({
                   className="overflow-hidden"
                 >
                   <div className="px-6 md:px-8 pb-6">
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white/60">Learning Speed</span>
-                        <span className="text-2xl font-bold text-blue-400">4.6x</span>
-                      </div>
-                      <p className="text-white/50 text-sm">Seven boys started 2 years behind. They caught up in 6 months.</p>
+                    <div className="bg-white/[0.02] rounded-xl p-4 mb-4">
+                      <h5 className="text-white/80 font-medium mb-2">The Data:</h5>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-400 mt-1">•</span>
+                          <span className="text-white/60">7 boys, all 2+ years behind grade level</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-400 mt-1">•</span>
+                          <span className="text-white/60">Completed 2 full grade levels in 6 months</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-400 mt-1">•</span>
+                          <span className="text-white/60">Learning speed: 4.6x faster than traditional school</span>
+                        </li>
+                      </ul>
                     </div>
+                    <p className="text-white/50 text-sm">
+                      Every child learns differently. When we identify and address individual learning gaps,
+                      students who were struggling can finally experience the joy of understanding and progress.
+                    </p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* NEW: Kindergarten Success */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'kindergarten-success' ? null : 'kindergarten-success')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Even 5-Year-Olds Excel</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'kindergarten-success' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'kindergarten-success' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'kindergarten-success' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="text-center mb-4">
+                      <p className="text-white/60 mb-2">By end of Kindergarten:</p>
+                      <div className="text-5xl font-bold text-blue-400 mb-2">Top 1%</div>
+                      <p className="text-white/60 text-sm">Nationally in both Math and Reading</p>
+                    </div>
+                    <p className="text-white/50 text-sm leading-relaxed">
+                      We were initially unsure if our youngest learners could thrive with this approach.
+                      What we discovered was beautiful: when given the right tools and support, 
+                      5-year-olds embrace learning with incredible enthusiasm and achieve remarkable milestones.
+                    </p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* NEW: High School Dominance */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'high-school-dominance' ? null : 'high-school-dominance')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">High School: Prepared for What's Next</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'high-school-dominance' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'high-school-dominance' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'high-school-dominance' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                      <div className="bg-white/[0.02] rounded-xl p-4">
+                        <h5 className="text-white/80 font-medium mb-2">SAT Performance</h5>
+                        <div className="text-3xl font-bold text-blue-400">1470+</div>
+                        <p className="text-white/50 text-sm">National Average: 1028</p>
+                      </div>
+                      <div className="bg-white/[0.02] rounded-xl p-4">
+                        <h5 className="text-white/80 font-medium mb-2">AP Test Results</h5>
+                        <div className="text-3xl font-bold text-blue-400">90%</div>
+                        <p className="text-white/50 text-sm">Score 4s or 5s (highest scores)</p>
+                      </div>
+                    </div>
+                    <div className="space-y-2 text-sm">
+                      <p className="text-white/60">College Acceptances:</p>
+                      <p className="text-white/50">Stanford, Vanderbilt, USC, NYU, UT Honors, Howard, Northeastern</p>
+                      <p className="text-white/60 mt-2">50% National Merit Scholars or Commended</p>
+                    </div>
+                    <p className="text-white/40 text-xs mt-4">
+                      These students have been learning through personalized AI and caring mentors since elementary school.
+                    </p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -1921,7 +2200,7 @@ export default function HeroGeometric({
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Low Income Students</h4>
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">The Great Equalizer: Low Income Students</h4>
                   </div>
                   <motion.div
                     animate={{ rotate: specialCasesOpenIndex === 'low-income-students' ? 180 : 0 }}
@@ -1943,13 +2222,23 @@ export default function HeroGeometric({
                   className="overflow-hidden"
                 >
                   <div className="px-6 md:px-8 pb-6">
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white/60">Learning Speed</span>
-                        <span className="text-2xl font-bold text-blue-400">2.1x</span>
+                    <div className="bg-white/[0.02] rounded-xl p-4 mb-4">
+                      <p className="text-white/60 text-sm mb-3">Brownsville, TX - One of America's poorest districts:</p>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <p className="text-white/50 text-xs mb-1">Math Progress</p>
+                          <p className="text-white/80 font-medium">31st → 84th percentile</p>
+                        </div>
+                        <div>
+                          <p className="text-white/50 text-xs mb-1">Reading Progress</p>
+                          <p className="text-white/80 font-medium">31st → 71st percentile</p>
+                        </div>
                       </div>
-                      <p className="text-white/50 text-sm">Math: 31st → 84th percentile. Reading: 31st → 71st percentile. One year.</p>
                     </div>
+                    <p className="text-white/50 text-sm">
+                      Personalized learning doesn't discriminate. Every child receives the same high-quality, 
+                      individualized attention they deserve, helping close opportunity gaps that shouldn't exist.
+                    </p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -1965,7 +2254,7 @@ export default function HeroGeometric({
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Achievement Scores by Grade</h4>
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">MAP Test Results: Every Grade, Every Subject</h4>
                   </div>
                   <motion.div
                     animate={{ rotate: specialCasesOpenIndex === 'achievement-by-grade' ? 180 : 0 }}
@@ -2030,8 +2319,62 @@ export default function HeroGeometric({
                       </table>
                     </div>
                     <p className="text-white/40 text-xs mt-4">
-                      * MAP test scores. Same test millions of American students take each year.
+                      * MAP (Measures of Academic Progress) - The same test millions of American students take each year.
+                      These are national percentiles. 99 = top 1% in the nation.
                     </p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* NEW: The Efficiency Proof */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'efficiency-proof' ? null : 'efficiency-proof')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">The Math Behind 2x Learning</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'efficiency-proof' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'efficiency-proof' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'efficiency-proof' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="space-y-4">
+                      <div className="bg-white/[0.02] rounded-xl p-4">
+                        <h5 className="text-white/80 font-medium mb-2">Traditional School:</h5>
+                        <p className="text-white/60 text-sm">180 days × 1 hour/day = 180 hours per subject</p>
+                        <p className="text-white/50 text-xs mt-1">Plus homework, tutoring, summer school...</p>
+                      </div>
+                      <div className="bg-white/[0.02] rounded-xl p-4">
+                        <h5 className="text-white/80 font-medium mb-2">2 Hour Learning:</h5>
+                        <p className="text-white/60 text-sm">3rd grade complete: 40 hours</p>
+                        <p className="text-white/60 text-sm">4th grade complete: 35 hours</p>
+                        <p className="text-blue-400 font-medium text-sm mt-2">2 grade levels: 75 hours total</p>
+                      </div>
+                      <div className="text-center mt-4">
+                        <p className="text-white/50 text-sm">Result: Same content, 58% less time, 100% mastery</p>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               </motion.div>
@@ -2043,13 +2386,14 @@ export default function HeroGeometric({
               className="mt-12 bg-gradient-to-br from-blue-500/10 to-blue-600/5 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 max-w-3xl mx-auto"
             >
               <h3 className="text-xl md:text-2xl font-semibold text-white/90 mb-4 text-center">
-                Still Skeptical? Read the Full Research.
+                Want to Learn More?
               </h3>
               <p className="text-white/70 text-base mb-6 text-center">
-                Every claim. Every statistic. Every breakthrough. Documented in our comprehensive white paper.
+                We've documented everything in our comprehensive white paper - every methodology, 
+                every data point, every student story.
                 <br />
                 <span className="text-white/50 text-sm">
-                  See the methodology. Check the data. Verify the results.
+                  27 pages of transparent data from 10 years of helping kids learn better.
                 </span>
               </p>
               <div className="text-center">
@@ -2113,12 +2457,13 @@ export default function HeroGeometric({
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white/95 to-gray-300">
-                  Let's Give Kids Their Time Back
+                  Ready to Give Kids Their Time Back?
                 </span>
               </h2>
               <p className="text-base md:text-lg text-white/60 mb-8 leading-relaxed font-light max-w-3xl mx-auto">
-                Three quick questions help us connect you with the right TimeBack option. 
-                Start a school. Find a school. Learn more.
+                Whether you want this for your child, your school, or your entire community – 
+                we have a path for you. Parents, educators, founders, governments, and supporters 
+                are all building the future of education together.
               </p>
             </motion.div>
 
@@ -2132,7 +2477,7 @@ export default function HeroGeometric({
                 rel="noopener noreferrer"
                 className="block w-full px-8 py-4 bg-blue-500 text-white text-lg font-medium rounded-full hover:bg-blue-600 transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl text-center"
               >
-                Take the 3 Question Survey
+                Find Your Path to Better Learning →
               </a>
             </motion.div>
           </div>

@@ -51,7 +51,7 @@ export function StreamVideo({
     });
 
     // Use local video in development or if Stream is not configured
-    if (!useStream || videoId === 'YOUR_VIDEO_ID_HERE') {
+    if (!useStream) {
       console.log(`[StreamVideo ${new Date().toISOString()}] Using local video:`, localPath);
       video.src = localPath;
       return;
@@ -90,14 +90,14 @@ export function StreamVideo({
             console.log(`[StreamVideo ${new Date().toISOString()}] HLS manifest parsed`);
           });
 
-          hls.on(Hls.Events.LEVEL_LOADED, (event, data) => {
+          hls.on(Hls.Events.LEVEL_LOADED, (_event: any, data: any) => {
             console.log(`[StreamVideo ${new Date().toISOString()}] HLS level loaded:`, {
               level: data.level,
               duration: data.details.totalduration
             });
           });
 
-          hls.on(Hls.Events.ERROR, (event, data) => {
+          hls.on(Hls.Events.ERROR, (_event: any, data: any) => {
             console.error(`[StreamVideo ${new Date().toISOString()}] HLS error:`, data);
             
             if (data.fatal) {
@@ -158,13 +158,16 @@ export function StreamVideo({
   const handleError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     const video = e.currentTarget;
     const errorCode = video.error?.code;
-    const errorMessage = video.error?.message;
+    const errorMessage = video.error?.message || 'Unknown error';
     
-    console.error(`[StreamVideo ${new Date().toISOString()}] Video error:`, {
-      code: errorCode,
-      message: errorMessage,
-      src: video.src
-    });
+    // Only log if there's actual error information
+    if (errorCode || errorMessage !== 'Unknown error') {
+      console.error(`[StreamVideo ${new Date().toISOString()}] Video error:`, {
+        code: errorCode,
+        message: errorMessage,
+        src: video.src
+      });
+    }
     
     setError('Failed to load video');
     setIsLoading(false);
