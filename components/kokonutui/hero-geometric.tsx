@@ -1065,7 +1065,7 @@ export default function HeroGeometric({
                     <div className="space-y-4">
                       <p className="text-white/60 text-sm leading-relaxed">
                         PowerPath ensures students truly understand each concept before moving forward. No more passing with 70% and 
-                        missing 30% of the material. Students achieve 90%+ mastery at every level.
+                        missing 30% of the material. Students achieve Over 90% mastery at every level.
                       </p>
                       <div className="bg-white/[0.02] rounded-lg p-4 border border-white/[0.05]">
                         <h5 className="text-white/80 font-semibold mb-2">The PowerPath 100 Score</h5>
@@ -1156,7 +1156,7 @@ export default function HeroGeometric({
                 The Result: Happy Kids Who Excel
               </h3>
               <p className="text-white/70 text-base leading-relaxed mb-6">
-                90%+ of our students say they love school. They score in the 99th percentile nationally. 
+                Over 90% of our students say they love school. They score in the 99th percentile nationally. 
                 And they have time to be kids - playing sports, making art, building things, spending time with family.
               </p>
               <p className="text-blue-300 text-lg font-medium">
@@ -1656,7 +1656,7 @@ export default function HeroGeometric({
                 >
                   <div className="px-6 md:px-8 pb-6">
                     <p className="text-white/60 text-sm md:text-base leading-relaxed mb-4">
-                      Schools move by calendar. We move by mastery. Kids prove they know it (90%+) before moving on. 
+                      Schools move by calendar. We move by mastery. Kids prove they know it (Over 90%) before moving on. 
                       No gaps. No holes. Just solid understanding.
                     </p>
                     <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/[0.08] p-4 mb-4">
