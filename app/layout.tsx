@@ -2,19 +2,19 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'TimeBack - Kids Learn 2x More in 2 Hours a Day',
-  description: 'AI tutors give every student personal attention. Real kids scoring in the 99th percentile. Start a school or find one near you.',
-  keywords: 'AI education, personalized learning, 2 sigma, Bloom, Alpha School, TimeBack, homeschool alternative',
+  title: 'TimeBack - School Is Broken. We Fixed It.',
+  description: 'Our students score in the 99th percentile nationally. AI tutors give 100% attention 100% of the time. Kids learn 2.47x faster in just 2 hours a day.',
+  keywords: 'AI education, personalized learning, 2 sigma, Bloom, Alpha School, TimeBack, homeschool alternative, 99th percentile',
   openGraph: {
-    title: 'TimeBack - Kids Learn 2x More in 2 Hours a Day',
-    description: 'AI tutors give every student personal attention. Real kids scoring in the 99th percentile.',
+    title: 'TimeBack - School Is Broken. We Fixed It.',
+    description: 'Our students score in the 99th percentile nationally. Kids learn 2.47x faster with AI tutors.',
     url: 'https://timeback.com',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TimeBack - Kids Learn 2x More in 2 Hours a Day',
-    description: 'AI tutors give every student personal attention. Real kids scoring in the 99th percentile.',
+    title: 'TimeBack - School Is Broken. We Fixed It.',
+    description: 'Our students score in the 99th percentile nationally. Kids learn 2.47x faster with AI tutors.',
   },
   generator: 'v0.dev',
 }

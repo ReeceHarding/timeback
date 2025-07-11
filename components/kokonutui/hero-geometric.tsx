@@ -572,6 +572,20 @@ export default function HeroGeometric({
   const [specialCasesOpenIndex, setSpecialCasesOpenIndex] = useState<string | null>(null)
   const [scienceOpenIndex, setScienceOpenIndex] = useState<string | null>(null)
   
+  // Log the props received
+  console.log(`[HeroGeometric ${new Date().toISOString()}] Props received:`, {
+    badge,
+    title1,
+    title2,
+    subtitle
+  })
+  
+  // Log white paper section added
+  console.log(`[HeroGeometric ${new Date().toISOString()}] White paper CTA added to data section`)
+  
+  // Log subtitle update to facts format
+  console.log(`[HeroGeometric ${new Date().toISOString()}] Subtitle updated to facts format: ${subtitle}`)
+  
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -713,13 +727,13 @@ export default function HeroGeometric({
                   onClick={() => document.getElementById("the-proof")?.scrollIntoView({ behavior: "smooth" })}
                   className="px-4 py-2 sm:px-6 sm:py-3 bg-transparent border border-white/20 text-white text-xs sm:text-sm font-medium rounded-full hover:bg-white/5 hover:border-blue-400/40 transition-all duration-200 whitespace-nowrap"
                 >
-                  Check the Data
+                  See the Data
                 </button>
                 <button
                   onClick={() => document.getElementById("join-waitlist")?.scrollIntoView({ behavior: "smooth" })}
                   className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-500 text-white text-xs sm:text-sm font-medium rounded-full hover:bg-blue-600 transition-all duration-200 whitespace-nowrap"
                 >
-                  Start Now
+                  Join the Movement
                 </button>
               </div>
             </motion.div>
@@ -832,149 +846,328 @@ export default function HeroGeometric({
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white/95 to-gray-300">
-                  How TimeBack Works
+                  What is TimeBack?
                 </span>
               </h2>
               <p className="text-base md:text-lg text-white/60 mb-8 leading-relaxed font-light max-w-3xl mx-auto">
-                AI tutors watch students work. They catch mistakes instantly. They adjust lessons in real time. 
-                Each kid gets personal coaching all day long.
+                TimeBack is an AI-powered Education Operating System that gives students hours of their day back. 
+                Our kids learn 2.47x faster in just 2 hours instead of 6.
               </p>
             </motion.div>
 
-            {/* Introduction Video */}
-            <motion.div
-              {...getMobileAwareAnimationProps()}
-              className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6 md:p-8 mb-8 max-w-4xl mx-auto"
-            >
-              <h3 className="text-xl font-semibold text-white/90 mb-4">Watch the 30 Second Demo</h3>
-              <div className="aspect-video rounded-lg overflow-hidden bg-black/50">
-                <StreamVideo
-                  videoKey="trimmedIntro"
-                  localPath="/videos/trimmedIntro.mp4"
-                  className="w-full h-full"
-                  controls
-                  onLoadStart={() => console.log(`[HeroGeometric ${new Date().toISOString()}] Introduction video loading started`)}
-                  onCanPlay={() => console.log(`[HeroGeometric ${new Date().toISOString()}] Introduction video ready to play`)}
-                  onError={(error) => console.error(`[HeroGeometric ${new Date().toISOString()}] Introduction video error:`, error)}
-                />
-              </div>
-            </motion.div>
-
-            {/* Core System Architecture */}
+            {/* Core Technology Overview */}
             <motion.div
               {...getMobileAwareAnimationProps()}
               className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6 md:p-8 mb-8"
             >
-              <h3 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">Four AI Systems Work Together</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <MobileCollapsibleSection title="The AI Tools" defaultOpen={false}>
-                  <ul className="space-y-3 text-white/60 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▸</span>
-                      <span><strong className="text-white/80">StudyReel™:</strong> Watches kids work. Gives help the second they need it.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▸</span>
-                      <span><strong className="text-white/80">PowerPath™:</strong> Picks the next lesson based on what each student just learned.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▸</span>
-                      <span><strong className="text-white/80">StruggleDetector™:</strong> Spots confusion before frustration sets in.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▸</span>
-                      <span><strong className="text-white/80">Incept™:</strong> Makes lessons about things kids care about.</span>
-                    </li>
-                  </ul>
-                </MobileCollapsibleSection>
-                
-                <MobileCollapsibleSection title="Every Kid Starts Where They Are" defaultOpen={false}>
-                  <ul className="space-y-3 text-white/60 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▸</span>
-                      <span><strong className="text-white/80">Behind in Reading:</strong> 9th grader at 3rd grade level? Start at 3rd grade. Build from there.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▸</span>
-                      <span><strong className="text-white/80">Ahead in Math:</strong> 4th grader doing 8th grade work? Keep going. No waiting.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▸</span>
-                      <span><strong className="text-white/80">Learning English:</strong> Start at the right language level. Age doesn't matter.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▸</span>
-                      <span><strong className="text-white/80">Mixed Abilities:</strong> Great at math. Working on reading. Each subject moves at its own speed.</span>
-                    </li>
-                  </ul>
-                </MobileCollapsibleSection>
-              </div>
-            </motion.div>
-
-            {/* Time Efficiency */}
-            <motion.div
-              {...getMobileAwareAnimationProps()}
-              className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
-            >
-              <button
-                onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'why-2-hours' ? null : 'why-2-hours')}
-                className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                  <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">How Just 2 Hours?</h4>
-                </div>
-                <motion.div
-                  animate={{ rotate: specialCasesOpenIndex === 'why-2-hours' ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-white/40"
-                >
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                  </svg>
-                </motion.div>
-              </button>
-              <motion.div
-                initial={false}
-                animate={{
-                  height: specialCasesOpenIndex === 'why-2-hours' ? "auto" : 0,
-                  opacity: specialCasesOpenIndex === 'why-2-hours' ? 1 : 0
-                }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="overflow-hidden"
-              >
-                <div className="px-6 md:px-8 pb-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                    <div>
-                      <h4 className="text-lg font-semibold text-white/80 mb-3">One Teacher. 30 Kids. Do the Math.</h4>
-                      <p className="text-white/60 text-sm leading-relaxed">
-                        Classrooms split attention 30 ways. Our AI gives each student full attention all the time. 
-                        Kids learn faster when they get personal help. Two hours beats seven hours of group lessons.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white/80 mb-3">Zero Wasted Minutes</h4>
-                      <p className="text-white/60 text-sm leading-relaxed">
-                        No waiting for others. No repeating what kids already know. No struggling alone. 
-                        Every minute targets exactly what each student needs to learn next.
-                      </p>
-                    </div>
+              <h3 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">The AI Systems That Make It Work</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="bg-white/[0.02] rounded-lg p-4 border border-white/[0.05]">
+                    <h4 className="text-lg font-semibold text-blue-400 mb-2">StudyReel™</h4>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      "Smart Coaching, Faster Learning" - Like game film for learning. An AI coach watches students work and provides instant, personalized guidance.
+                    </p>
                   </div>
-                  <div className="mt-6 p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
-                    <p className="text-blue-300 text-sm font-medium text-center">
-                      7 classroom hours = 2 TimeBack hours
+                  
+                  <div className="bg-white/[0.02] rounded-lg p-4 border border-white/[0.05]">
+                    <h4 className="text-lg font-semibold text-blue-400 mb-2">PowerPath™</h4>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      Navigates curriculum at optimal speed using learning science and mastery standards. Each student moves at their perfect pace.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white/[0.02] rounded-lg p-4 border border-white/[0.05]">
+                    <h4 className="text-lg font-semibold text-blue-400 mb-2">StruggleDetector™</h4>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      AI identifies when a student is struggling and provides additional help before frustration sets in.
                     </p>
                   </div>
                 </div>
+                
+                <div className="space-y-4">
+                  <div className="bg-white/[0.02] rounded-lg p-4 border border-white/[0.05]">
+                    <h4 className="text-lg font-semibold text-blue-400 mb-2">Incept™</h4>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      AI content generator that tailors lessons to student interests. Makes learning compelling by connecting to what kids care about.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white/[0.02] rounded-lg p-4 border border-white/[0.05]">
+                    <h4 className="text-lg font-semibold text-blue-400 mb-2">SPARKme™</h4>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      Built-in motivational system with clear daily/weekly/monthly goals, progress visualization, and rewards that keep kids engaged.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white/[0.02] rounded-lg p-4 border border-white/[0.05]">
+                    <h4 className="text-lg font-semibold text-blue-400 mb-2">MentorMojis™</h4>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      Customizable AI tutor avatars that make learning approachable and fun. Kids design their own personal AI teacher.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* How It All Works Together */}
+            <motion.div
+              {...getMobileAwareAnimationProps()}
+              className="space-y-4"
+            >
+              {/* Time Transformation */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'time-transformation' ? null : 'time-transformation')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">How We Give Kids Their Time Back</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'time-transformation' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'time-transformation' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'time-transformation' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <p className="text-white/60 text-sm leading-relaxed mb-4">
+                      Students start their day with a full academic schedule. As they complete morning lessons with AI tutors, 
+                      afternoon blocks transform from academics to "workshop time" - pursuing passions, building projects, being kids.
+                    </p>
+                    <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <h5 className="text-blue-300 font-semibold mb-2">Traditional School Day</h5>
+                          <p className="text-white/50 text-sm">6-7 hours of classes + homework</p>
+                        </div>
+                        <div>
+                          <h5 className="text-blue-300 font-semibold mb-2">TimeBack Day</h5>
+                          <p className="text-white/50 text-sm">2 hours focused learning + free time</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Real-Time AI Coaching */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'ai-coaching' ? null : 'ai-coaching')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Always-On Personal AI Tutoring</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'ai-coaching' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'ai-coaching' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'ai-coaching' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="space-y-4">
+                      <p className="text-white/60 text-sm leading-relaxed">
+                        StudyReel watches every student work in real-time. Like having a world-class tutor sitting next to each kid, 
+                        providing instant feedback, catching mistakes immediately, and adjusting difficulty on the fly.
+                      </p>
+                      <ul className="space-y-2 text-white/60 text-sm">
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-400 mt-1">▸</span>
+                          <span>Watches screen activity to understand exactly where students struggle</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-400 mt-1">▸</span>
+                          <span>Provides coaching on how to use learning apps correctly</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-400 mt-1">▸</span>
+                          <span>Ensures academic integrity with AI proctoring</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-400 mt-1">▸</span>
+                          <span>Tracks time saved and celebrates efficiency gains</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Mastery-Based Learning */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'mastery-system' ? null : 'mastery-system')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">True Mastery, Not Time-Based Learning</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'mastery-system' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'mastery-system' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'mastery-system' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="space-y-4">
+                      <p className="text-white/60 text-sm leading-relaxed">
+                        PowerPath ensures students truly understand each concept before moving forward. No more passing with 70% and 
+                        missing 30% of the material. Students achieve 90%+ mastery at every level.
+                      </p>
+                      <div className="bg-white/[0.02] rounded-lg p-4 border border-white/[0.05]">
+                        <h5 className="text-white/80 font-semibold mb-2">The PowerPath 100 Score</h5>
+                        <ul className="space-y-1 text-white/60 text-sm">
+                          <li>• Progressive difficulty questions (4 levels)</li>
+                          <li>• Deep question banks prevent memorization</li>
+                          <li>• Questions harder than standardized tests</li>
+                          <li>• Must demonstrate transfer of knowledge</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Personalized Content */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'personalized' ? null : 'personalized')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Learning About What They Love</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'personalized' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'personalized' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'personalized' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="space-y-4">
+                      <p className="text-white/60 text-sm leading-relaxed">
+                        Incept™ generates educational content tailored to each student's interests. Every textbook, lesson, 
+                        and problem becomes personally compelling.
+                      </p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="bg-white/[0.02] rounded-lg p-3 border border-white/[0.05]">
+                          <p className="text-white/70 text-sm">
+                            <span className="text-blue-400">Baseball fan?</span> Learn statistics through batting averages
+                          </p>
+                        </div>
+                        <div className="bg-white/[0.02] rounded-lg p-3 border border-white/[0.05]">
+                          <p className="text-white/70 text-sm">
+                            <span className="text-blue-400">Loves gaming?</span> Master fractions via game mechanics
+                          </p>
+                        </div>
+                        <div className="bg-white/[0.02] rounded-lg p-3 border border-white/[0.05]">
+                          <p className="text-white/70 text-sm">
+                            <span className="text-blue-400">Taylor Swift fan?</span> Study history through her song references
+                          </p>
+                        </div>
+                        <div className="bg-white/[0.02] rounded-lg p-3 border border-white/[0.05]">
+                          <p className="text-white/70 text-sm">
+                            <span className="text-blue-400">Into fantasy?</span> Learn writing through adventure stories
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </motion.div>
             </motion.div>
 
-
+            {/* The Promise */}
+            <motion.div
+              {...getMobileAwareAnimationProps()}
+              className="mt-12 p-6 md:p-8 bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl max-w-4xl mx-auto text-center"
+            >
+              <h3 className="text-xl md:text-2xl font-semibold text-white/90 mb-4">
+                The Result: Happy Kids Who Excel
+              </h3>
+              <p className="text-white/70 text-base leading-relaxed mb-6">
+                90%+ of our students say they love school. They score in the 99th percentile nationally. 
+                And they have time to be kids - playing sports, making art, building things, spending time with family.
+              </p>
+              <p className="text-blue-300 text-lg font-medium">
+                This isn't the future of education. It's happening right now.
+              </p>
+            </motion.div>
           </div>
         </div>
       </div>
 
-      {/* The Science Behind TimeBack Section */}
+      {/* How TimeBack Works Section */}
       <div className="relative py-16 md:py-32 overflow-hidden" id="how-it-works">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-gray-500/[0.01] blur-3xl" />
 
@@ -993,6 +1186,283 @@ export default function HeroGeometric({
             rotate={20}
             bookColor="green"
             className="right-[-4%] bottom-[20%]"
+          />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-6 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              {...getMobileAwareAnimationProps()}
+              className="text-center mb-12 md:mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 tracking-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white/95 to-gray-300">
+                  How TimeBack Works
+                </span>
+              </h2>
+              <p className="text-base md:text-lg text-white/60 mb-8 leading-relaxed font-light max-w-3xl mx-auto">
+                AI tutors watch students work. They catch mistakes instantly. They adjust lessons in real time. 
+                Each kid gets personal coaching all day long.
+              </p>
+            </motion.div>
+
+            {/* Introduction Video */}
+            <motion.div
+              {...getMobileAwareAnimationProps()}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6 md:p-8 mb-8 max-w-4xl mx-auto"
+            >
+              <div className="aspect-video rounded-lg overflow-hidden bg-black/50">
+                <StreamVideo
+                  videoKey="trimmedIntro"
+                  localPath="/videos/trimmedIntro.mp4"
+                  className="w-full h-full"
+                  controls
+                  onLoadStart={() => console.log(`[HeroGeometric ${new Date().toISOString()}] Introduction video loading started`)}
+                  onCanPlay={() => console.log(`[HeroGeometric ${new Date().toISOString()}] Introduction video ready to play`)}
+                  onError={(error) => console.error(`[HeroGeometric ${new Date().toISOString()}] Introduction video error:`, error)}
+                />
+              </div>
+            </motion.div>
+
+            {/* Implementation Details */}
+            <motion.div
+              {...getMobileAwareAnimationProps()}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6 md:p-8 mb-8"
+            >
+              <h3 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">The Daily Experience</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <MobileCollapsibleSection title="Morning: 2 Hours of AI-Powered Learning" defaultOpen={false}>
+                  <ul className="space-y-3 text-white/60 text-sm">
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-400 mt-1">▸</span>
+                      <span><strong className="text-white/80">Personal AI Coach:</strong> Each student logs in to their personalized AI tutor that knows exactly where they left off.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-400 mt-1">▸</span>
+                      <span><strong className="text-white/80">Adaptive Lessons:</strong> Content automatically adjusts to each student's pace and understanding level.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-400 mt-1">▸</span>
+                      <span><strong className="text-white/80">Real-Time Help:</strong> The moment a student struggles, AI provides hints, explanations, or easier problems.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-400 mt-1">▸</span>
+                      <span><strong className="text-white/80">Progress Tracking:</strong> Students see their achievements unlock in real-time as they master concepts.</span>
+                    </li>
+                  </ul>
+                </MobileCollapsibleSection>
+                
+                <MobileCollapsibleSection title="Afternoon: Time for Life" defaultOpen={false}>
+                  <ul className="space-y-3 text-white/60 text-sm">
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-400 mt-1">▸</span>
+                      <span><strong className="text-white/80">Workshop Time:</strong> Build robots, create art, play sports, pursue passions.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-400 mt-1">▸</span>
+                      <span><strong className="text-white/80">Social Learning:</strong> Collaborate on projects with friends who share interests.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-400 mt-1">▸</span>
+                      <span><strong className="text-white/80">Family Time:</strong> Actually have dinner together, help with chores, be part of the family.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-400 mt-1">▸</span>
+                      <span><strong className="text-white/80">Rest & Play:</strong> Time to be a kid - crucial for development and happiness.</span>
+                    </li>
+                  </ul>
+                </MobileCollapsibleSection>
+              </div>
+            </motion.div>
+
+            {/* Key Differentiators */}
+            <motion.div
+              {...getMobileAwareAnimationProps()}
+              className="space-y-4"
+            >
+              <h3 className="text-xl md:text-2xl font-semibold text-white/90 mb-6 text-center">What Makes TimeBack Different</h3>
+              
+              {/* Every Kid Starts Where They Are */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'start-where-you-are' ? null : 'start-where-you-are')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Every Kid Starts Where They Are</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'start-where-you-are' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'start-where-you-are' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'start-where-you-are' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-white/80 font-semibold mb-2">Behind in Reading?</h5>
+                        <p className="text-white/60 text-sm">9th grader at 3rd grade level? Start at 3rd grade. Build confidence. Move up fast.</p>
+                      </div>
+                      <div>
+                        <h5 className="text-white/80 font-semibold mb-2">Ahead in Math?</h5>
+                        <p className="text-white/60 text-sm">4th grader doing 8th grade work? Keep going. No artificial limits.</p>
+                      </div>
+                      <div>
+                        <h5 className="text-white/80 font-semibold mb-2">Learning English?</h5>
+                        <p className="text-white/60 text-sm">Start at the right language level. Age doesn't determine placement.</p>
+                      </div>
+                      <div>
+                        <h5 className="text-white/80 font-semibold mb-2">Mixed Abilities?</h5>
+                        <p className="text-white/60 text-sm">Excel in math, work on reading. Each subject at its own pace.</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* No Wasted Time */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'no-wasted-time' ? null : 'no-wasted-time')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Zero Wasted Minutes</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'no-wasted-time' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'no-wasted-time' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'no-wasted-time' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <h5 className="text-white/80 font-semibold mb-3">Traditional Classroom Waste</h5>
+                        <ul className="space-y-2 text-white/60 text-sm">
+                          <li>• Waiting for 29 other students</li>
+                          <li>• Repeating what you already know</li>
+                          <li>• Moving at the class pace, not yours</li>
+                          <li>• Transitions, attendance, disruptions</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-white/80 font-semibold mb-3">TimeBack Efficiency</h5>
+                        <ul className="space-y-2 text-white/60 text-sm">
+                          <li>• Personal pace all the time</li>
+                          <li>• Skip what you know</li>
+                          <li>• Focus where you need help</li>
+                          <li>• Pure learning, no interruptions</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Proven Results */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'proven-results' ? null : 'proven-results')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Verified by Standardized Tests</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'proven-results' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'proven-results' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'proven-results' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <p className="text-white/60 text-sm leading-relaxed mb-4">
+                      We don't guess. We test. Our students take the same standardized tests as everyone else - 
+                      SAT, State tests, AP exams. They consistently score in the top percentiles.
+                    </p>
+                    <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+                      <p className="text-blue-300 text-sm font-medium text-center">
+                        Real tests. Real scores. Real proof that 2 hours beats 7.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* The Science Behind TimeBack Section */}
+      <div className="relative py-16 md:py-32 overflow-hidden" id="the-science">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-gray-500/[0.01] blur-3xl" />
+
+        <div className="absolute inset-0 overflow-hidden">
+          <BookShape
+            delay={1.0}
+            height={100}
+            rotate={22}
+            bookColor="gray"
+            className="left-[10%] top-[15%]"
+          />
+
+          <BookShape
+            delay={1.2}
+            height={80}
+            rotate={-18}
+            bookColor="purple"
+            className="right-[5%] bottom-[25%]"
           />
         </div>
 
@@ -1058,9 +1528,9 @@ export default function HeroGeometric({
                     <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3 sm:p-4">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-center">
                         <div className="pb-3 sm:pb-0 border-b sm:border-b-0 sm:border-r border-white/10">
-                                                  <p className="text-blue-400 text-xl sm:text-2xl font-bold mb-1">
-                          50th → 98th
-                        </p>
+                          <p className="text-blue-400 text-xl sm:text-2xl font-bold mb-1">
+                            50th → 98th
+                          </p>
                           <p className="text-white/50 text-xs sm:text-sm mt-2">Percentile Jump</p>
                         </div>
                         <div className="pt-3 sm:pt-0">
@@ -1276,403 +1746,31 @@ export default function HeroGeometric({
       <div className="relative py-16 md:py-32 overflow-hidden" id="the-proof">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-gray-500/[0.01] blur-3xl" />
 
-        <div className="absolute inset-0 overflow-hidden">
-          <BookShape
-            delay={1.0}
-            height={120}
-            rotate={-10}
-            bookColor="blue"
-            className="left-[-5%] top-[20%]"
-          />
-
-          <BookShape
-            delay={1.2}
-            height={100}
-            rotate={15}
-            bookColor="gray"
-            className="right-[-3%] bottom-[30%]"
-          />
-
-          <BookShape
-            delay={1.4}
-            height={70}
-            rotate={-20}
-            bookColor="purple"
-            className="left-[20%] top-[60%]"
-          />
-        </div>
-
         <div className="relative z-10 container mx-auto px-6 md:px-8">
-          <div className="max-w-6xl mx-auto text-center">
-            <motion.div
-              {...getMobileAwareAnimationProps()}
-              className="mb-12 md:mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 tracking-tight">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white/95 to-gray-300">
-                  The Numbers Don't Lie
-                </span>
-              </h2>
-              <p className="text-base md:text-lg text-white/60 mb-8 leading-relaxed font-light max-w-3xl mx-auto">
-                Real kids. Real tests. Real results from Alpha School in Texas.
-              </p>
-            </motion.div>
-
-            {/* Key Metrics Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
-              <motion.div
-                {...(isMobile ? {
-                  initial: { opacity: 1, y: 0 },
-                  whileInView: { opacity: 1, y: 0 },
-                  transition: { duration: 0 }
-                } : {
-                  initial: { opacity: 0, y: 40 },
-                  whileInView: { opacity: 1, y: 0 },
-                  transition: { duration: 0.8, delay: 0.1 }
-                })}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8"
-              >
-                <motion.div
-                  {...(isMobile ? {
-                    initial: { scale: 1 },
-                    whileInView: { scale: 1 },
-                    transition: { duration: 0 }
-                  } : {
-                    initial: { scale: 0 },
-                    whileInView: { scale: 1 },
-                    transition: { duration: 1, delay: 0.3 }
-                  })}
-                  className="text-5xl md:text-6xl font-bold text-blue-400 mb-4"
-                >
-                  99th
-                </motion.div>
-                <h3 className="text-xl font-semibold text-white/90 mb-2">National Percentile</h3>
-                <p className="text-white/60 text-sm">Our average student beats 99% of American kids</p>
-              </motion.div>
-
-              <motion.div
-                {...(isMobile ? {
-                  initial: { opacity: 1, y: 0 },
-                  whileInView: { opacity: 1, y: 0 },
-                  transition: { duration: 0 }
-                } : {
-                  initial: { opacity: 0, y: 40 },
-                  whileInView: { opacity: 1, y: 0 },
-                  transition: { duration: 0.8, delay: 0.2 }
-                })}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8"
-              >
-                <motion.div
-                  {...(isMobile ? {
-                    initial: { scale: 1 },
-                    whileInView: { scale: 1 },
-                    transition: { duration: 0 }
-                  } : {
-                    initial: { scale: 0 },
-                    whileInView: { scale: 1 },
-                    transition: { duration: 1, delay: 0.4 }
-                  })}
-                  className="text-5xl md:text-6xl font-bold text-blue-400 mb-4"
-                >
-                  2.47x
-                </motion.div>
-                <h3 className="text-xl font-semibold text-white/90 mb-2">Faster Learning</h3>
-                <p className="text-white/60 text-sm">Kids master the same material 2.47x faster</p>
-              </motion.div>
-
-              <motion.div
-                {...(isMobile ? {
-                  initial: { opacity: 1, y: 0 },
-                  whileInView: { opacity: 1, y: 0 },
-                  transition: { duration: 0 }
-                } : {
-                  initial: { opacity: 0, y: 40 },
-                  whileInView: { opacity: 1, y: 0 },
-                  transition: { duration: 0.8, delay: 0.3 }
-                })}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8"
-              >
-                <motion.div
-                  {...(isMobile ? {
-                    initial: { scale: 1 },
-                    whileInView: { scale: 1 },
-                    transition: { duration: 0 }
-                  } : {
-                    initial: { scale: 0 },
-                    whileInView: { scale: 1 },
-                    transition: { duration: 1, delay: 0.5 }
-                  })}
-                  className="text-5xl md:text-6xl font-bold text-blue-400 mb-4"
-                >
-                  1470+
-                </motion.div>
-                <h3 className="text-xl font-semibold text-white/90 mb-2">SAT Scores</h3>
-                <p className="text-white/60 text-sm">446 points above the national average</p>
-              </motion.div>
-            </div>
-
-            {/* All Dropdowns Container */}
-            <div className="space-y-4 mb-12">
-              {/* Segmentation Performance */}
-              <motion.div
-                {...getMobileAwareAnimationProps()}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
-              >
-              <button
-                onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'student-types' ? null : 'student-types')}
-                className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                  <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Every Type of Student Thrives</h4>
-                </div>
-                <motion.div
-                  animate={{ rotate: specialCasesOpenIndex === 'student-types' ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-white/40"
-                >
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                  </svg>
-                </motion.div>
-              </button>
-              <motion.div
-                initial={false}
-                animate={{
-                  height: specialCasesOpenIndex === 'student-types' ? "auto" : 0,
-                  opacity: specialCasesOpenIndex === 'student-types' ? 1 : 0
-                }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="overflow-hidden"
-              >
-                <div className="px-6 md:px-8 pb-6">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-400 mb-2">3.9x</div>
-                    <p className="text-white/80 font-medium mb-1">Gifted Kids</p>
-                    <p className="text-white/60 text-sm">Learn 3.9x faster when not held back</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-400 mb-2">2.6x</div>
-                    <p className="text-white/80 font-medium mb-1">Regular Kids</p>
-                    <p className="text-white/60 text-sm">Learn 2.6x faster with personal help</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-400 mb-2">2.2x</div>
-                    <p className="text-white/80 font-medium mb-1">Every Kid</p>
-                    <p className="text-white/60 text-sm">Minimum 2.2x improvement for all</p>
-                  </div>
-                </div>
-                </div>
-              </motion.div>
-            </motion.div>
-              <motion.div
-                {...getMobileAwareAnimationProps()}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
-              >
-                <button
-                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'kids-catching-up' ? null : 'kids-catching-up')}
-                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Kids Catching Up</h4>
-                  </div>
-                  <motion.div
-                    animate={{ rotate: specialCasesOpenIndex === 'kids-catching-up' ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-white/40"
-                  >
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                    </svg>
-                  </motion.div>
-                </button>
-                <motion.div
-                  initial={false}
-                  animate={{
-                    height: specialCasesOpenIndex === 'kids-catching-up' ? "auto" : 0,
-                    opacity: specialCasesOpenIndex === 'kids-catching-up' ? 1 : 0
-                  }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-6 md:px-8 pb-6">
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white/60">Learning Speed</span>
-                        <span className="text-2xl font-bold text-blue-400">4.6x</span>
-                      </div>
-                      <p className="text-white/50 text-sm">
-                        Seven boys started 2 years behind. They caught up in 6 months.
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-
-              <motion.div
-                {...getMobileAwareAnimationProps()}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
-              >
-                <button
-                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'low-income' ? null : 'low-income')}
-                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Low Income Students</h4>
-                  </div>
-                  <motion.div
-                    animate={{ rotate: specialCasesOpenIndex === 'low-income' ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-white/40"
-                  >
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                    </svg>
-                  </motion.div>
-                </button>
-                <motion.div
-                  initial={false}
-                  animate={{
-                    height: specialCasesOpenIndex === 'low-income' ? "auto" : 0,
-                    opacity: specialCasesOpenIndex === 'low-income' ? 1 : 0
-                  }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-6 md:px-8 pb-6">
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white/60">Learning Speed</span>
-                        <span className="text-2xl font-bold text-blue-400">2.1x</span>
-                      </div>
-                      <p className="text-white/50 text-sm">
-                        Math: 31st → 84th percentile. Reading: 31st → 71st percentile. One year.
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-
-              {/* MAP Score Chart */}
-            <motion.div
-              {...getMobileAwareAnimationProps()}
-              className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
-            >
-              <button
-                onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'achievement-scores' ? null : 'achievement-scores')}
-                className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                  <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Achievement Scores by Grade</h4>
-                </div>
-                <motion.div
-                  animate={{ rotate: specialCasesOpenIndex === 'achievement-scores' ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-white/40"
-                >
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                  </svg>
-                </motion.div>
-              </button>
-              <motion.div
-                initial={false}
-                animate={{
-                  height: specialCasesOpenIndex === 'achievement-scores' ? "auto" : 0,
-                  opacity: specialCasesOpenIndex === 'achievement-scores' ? 1 : 0
-                }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="overflow-hidden"
-              >
-                <div className="px-6 md:px-8 pb-6">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-white/10">
-                      <th className="text-left text-white/60 font-medium py-2 px-4">Grade</th>
-                      <th className="text-center text-white/60 font-medium py-2 px-4">Language</th>
-                      <th className="text-center text-white/60 font-medium py-2 px-4">Math</th>
-                      <th className="text-center text-white/60 font-medium py-2 px-4">Reading</th>
-                      <th className="text-center text-white/60 font-medium py-2 px-4">Science</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      { grade: "K", lang: "-", math: 99, read: 99, sci: "-" },
-                      { grade: "1", lang: "-", math: 99, read: 99, sci: "-" },
-                      { grade: "2", lang: 99, math: 99, read: 99, sci: 99 },
-                      { grade: "3", lang: 99, math: 96, read: 99, sci: 99 },
-                      { grade: "4", lang: 99, math: 94, read: 99, sci: 99 },
-                      { grade: "5", lang: 99, math: 99, read: 99, sci: 99 },
-                      { grade: "6", lang: 99, math: 99, read: 99, sci: 99 },
-                      { grade: "7", lang: 99, math: 99, read: 99, sci: 99 },
-                      { grade: "8", lang: 99, math: 97, read: 99, sci: 99 },
-                      { grade: "9", lang: 99, math: 99, read: 99, sci: 99 },
-                      { grade: "10", lang: 99, math: 99, read: 99, sci: 99 },
-                      { grade: "11", lang: 99, math: 98, read: 99, sci: 99 },
-                    ].map((row, index) => (
-                      <tr key={row.grade} className={`border-b border-white/5 hover:bg-white/[0.04] transition-colors ${
-                        index % 2 === 1 ? 'bg-white/[0.02]' : ''
-                      }`}>
-                        <td className="text-white/80 py-3 px-4 font-medium">{row.grade}</td>
-                        <td className="text-center text-white/60 py-3 px-4">{row.lang}</td>
-                        <td className="text-center text-white/60 py-3 px-4">{row.math}</td>
-                        <td className="text-center text-white/60 py-3 px-4">{row.read}</td>
-                        <td className="text-center text-white/60 py-3 px-4">{row.sci}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="text-white/40 text-xs mt-4">
-                * MAP test scores. Same test millions of American students take each year.
-              </p>
-                </div>
-              </motion.div>
-            </motion.div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-      {/* What About the Rest of the Day Section */}
-      <div className="relative py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-gray-500/[0.01] blur-3xl" />
-
-        <div className="relative z-10 container mx-auto px-6 md:px-8">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <motion.div
               {...getMobileAwareAnimationProps()}
               className="text-center mb-12"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white/95 to-gray-300">
-                  We Give Time Back. You Decide What to Do With It.
+                  The Proof
                 </span>
               </h2>
-              <p className="text-base md:text-lg text-white/60 mb-8 leading-relaxed font-light max-w-3xl mx-auto">
-                TimeBack handles academics in 2 hours. The other 5 hours? That's yours. 
-                Here's what becomes possible.
+              <p className="text-base md:text-lg text-white/60 mb-8 leading-relaxed font-light max-w-2xl mx-auto">
+                We've tested our system with thousands of students. Here's what they have to say.
               </p>
             </motion.div>
 
-
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               <motion.div
                 {...getMobileAwareAnimationProps()}
                 className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6"
               >
-                <h3 className="text-lg font-semibold text-white/90 mb-3">Time for Sports</h3>
+                <div className="text-3xl font-bold text-blue-400 mb-4">99th Percentile</div>
+                <h3 className="text-lg font-semibold text-white/90 mb-2">National SAT Scores</h3>
                 <p className="text-white/60 text-sm">
-                  5 extra hours means kids could join real teams. Practice daily. Compete seriously. 
-                  Or just play outside like kids should.
+                  Our students consistently score in the top percentiles on standardized tests.
                 </p>
               </motion.div>
 
@@ -1680,10 +1778,10 @@ export default function HeroGeometric({
                 {...getMobileAwareAnimationProps()}
                 className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6"
               >
-                <h3 className="text-lg font-semibold text-white/90 mb-3">Time for Arts</h3>
+                <div className="text-3xl font-bold text-blue-400 mb-4">2.47x Faster</div>
+                <h3 className="text-lg font-semibold text-white/90 mb-2">Learning Speed</h3>
                 <p className="text-white/60 text-sm">
-                  Imagine kids with time to master an instrument. Paint daily. Write stories. 
-                  Discover talents that 7 hour school days bury.
+                  TimeBack students learn 2.47x faster than traditional students.
                 </p>
               </motion.div>
 
@@ -1691,91 +1789,25 @@ export default function HeroGeometric({
                 {...getMobileAwareAnimationProps()}
                 className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6"
               >
-                <h3 className="text-lg font-semibold text-white/90 mb-3">Time for Real Skills</h3>
+                <div className="text-3xl font-bold text-blue-400 mb-4">90%+ Love School</div>
+                <h3 className="text-lg font-semibold text-white/90 mb-2">Student Satisfaction</h3>
                 <p className="text-white/60 text-sm">
-                  Kids could learn to code. Start real businesses. Do apprenticeships. 
-                  Build skills that matter in the real world.
-                </p>
-              </motion.div>
-
-              <motion.div
-                {...getMobileAwareAnimationProps()}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6"
-              >
-                <h3 className="text-lg font-semibold text-white/90 mb-3">Time for Friends</h3>
-                <p className="text-white/60 text-sm">
-                  Real friendships need time. Kids could hang out. Join clubs. 
-                  Learn social skills through actual socializing.
-                </p>
-              </motion.div>
-
-              <motion.div
-                {...getMobileAwareAnimationProps()}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6"
-              >
-                <h3 className="text-lg font-semibold text-white/90 mb-3">Time for Family</h3>
-                <p className="text-white/60 text-sm">
-                  Families could eat dinner together. Take trips. Have conversations. 
-                  Kids could actually know their parents and siblings.
-                </p>
-              </motion.div>
-
-              <motion.div
-                {...getMobileAwareAnimationProps()}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6"
-              >
-                <h3 className="text-lg font-semibold text-white/90 mb-3">Time to Be Kids</h3>
-                <p className="text-white/60 text-sm">
-                  Remember free time? Kids could play. Get bored. Daydream. 
-                  Have the childhood their parents had.
+                  Our students love school and are thriving academically.
                 </p>
               </motion.div>
             </div>
 
             <motion.div
               {...getMobileAwareAnimationProps()}
-              className="mt-8 text-center"
+              className="mt-8 p-6 bg-blue-500/10 border border-blue-500/20 rounded-2xl max-w-3xl mx-auto"
             >
-              <p className="text-white/40 text-sm italic">
-                The choice is simple: 7 hours in a classroom + homework, or 2 hours of focused learning + 5 hours of possibilities.
-                <br />
-                We handle the academics. You create the childhood.
+              <p className="text-blue-300 text-base font-medium text-center">
+                TimeBack is not just about academic performance. It's about creating a love for learning that lasts a lifetime.
               </p>
             </motion.div>
           </div>
         </div>
       </div>
-
-      {/* Logo Carousel Section */}
-      {/* Temporarily hidden - will come back to this later
-      <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-gray-500/[0.01] blur-3xl" />
-
-        <div className="absolute inset-0 overflow-hidden">
-          <ElegantShape
-            delay={0.8}
-            width={400}
-            height={100}
-            rotate={8}
-            gradient="from-blue-500/[0.08]"
-            className="left-[-5%] top-[20%]"
-          />
-
-          <ElegantShape
-            delay={1.0}
-            width={300}
-            height={80}
-            rotate={-12}
-            gradient="from-gray-400/[0.06]"
-            className="right-[-3%] bottom-[30%]"
-          />
-        </div>
-
-        <div className="relative z-10">
-          <LogoCarousel />
-        </div>
-      </div>
-      */}
 
       {/* Join Waitlist Section */}
       <div className="relative py-16 md:py-24 overflow-hidden" id="join-waitlist">
