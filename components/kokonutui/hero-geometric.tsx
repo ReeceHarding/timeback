@@ -1742,68 +1742,342 @@ export default function HeroGeometric({
         </div>
       </div>
 
-      {/* The Proof Section */}
+      {/* The Proof Section - The Numbers Don't Lie */}
       <div className="relative py-16 md:py-32 overflow-hidden" id="the-proof">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-gray-500/[0.01] blur-3xl" />
 
+        <div className="absolute inset-0 overflow-hidden">
+          <BookShape
+            delay={1.0}
+            height={100}
+            rotate={-12}
+            bookColor="blue"
+            className="left-[15%] top-[10%]"
+          />
+
+          <BookShape
+            delay={1.2}
+            height={80}
+            rotate={18}
+            bookColor="purple"
+            className="right-[10%] bottom-[20%]"
+          />
+        </div>
+
         <div className="relative z-10 container mx-auto px-6 md:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto text-center">
             <motion.div
               {...getMobileAwareAnimationProps()}
-              className="text-center mb-12"
+              className="mb-12 md:mb-16"
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white/95 to-gray-300">
-                  The Proof
+                  The Numbers Don't Lie
                 </span>
               </h2>
-              <p className="text-base md:text-lg text-white/60 mb-8 leading-relaxed font-light max-w-2xl mx-auto">
-                We've tested our system with thousands of students. Here's what they have to say.
+              <p className="text-base md:text-lg text-white/60 mb-8 leading-relaxed font-light max-w-3xl mx-auto">
+                Real kids. Real tests. Real results from Alpha School in Texas.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* Top 3 Key Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
               <motion.div
                 {...getMobileAwareAnimationProps()}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6"
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8"
               >
-                <div className="text-3xl font-bold text-blue-400 mb-4">99th Percentile</div>
-                <h3 className="text-lg font-semibold text-white/90 mb-2">National SAT Scores</h3>
-                <p className="text-white/60 text-sm">
-                  Our students consistently score in the top percentiles on standardized tests.
-                </p>
+                <div className="text-5xl md:text-6xl font-bold text-blue-400 mb-4">99th</div>
+                <h3 className="text-xl font-semibold text-white/90 mb-2">National Percentile</h3>
+                <p className="text-white/60 text-sm">Our average student beats 99% of American kids</p>
               </motion.div>
 
               <motion.div
                 {...getMobileAwareAnimationProps()}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6"
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8"
               >
-                <div className="text-3xl font-bold text-blue-400 mb-4">2.47x Faster</div>
-                <h3 className="text-lg font-semibold text-white/90 mb-2">Learning Speed</h3>
-                <p className="text-white/60 text-sm">
-                  TimeBack students learn 2.47x faster than traditional students.
-                </p>
+                <div className="text-5xl md:text-6xl font-bold text-blue-400 mb-4">2.47x</div>
+                <h3 className="text-xl font-semibold text-white/90 mb-2">Faster Learning</h3>
+                <p className="text-white/60 text-sm">Kids master the same material 2.47x faster</p>
               </motion.div>
 
               <motion.div
                 {...getMobileAwareAnimationProps()}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6"
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8"
               >
-                <div className="text-3xl font-bold text-blue-400 mb-4">90%+ Love School</div>
-                <h3 className="text-lg font-semibold text-white/90 mb-2">Student Satisfaction</h3>
-                <p className="text-white/60 text-sm">
-                  Our students love school and are thriving academically.
-                </p>
+                <div className="text-5xl md:text-6xl font-bold text-blue-400 mb-4">1470+</div>
+                <h3 className="text-xl font-semibold text-white/90 mb-2">SAT Scores</h3>
+                <p className="text-white/60 text-sm">446 points above the national average</p>
               </motion.div>
             </div>
 
+            {/* Collapsible Sections */}
+            <div className="space-y-4 mb-12">
+              {/* Every Type of Student Thrives */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'every-student-thrives' ? null : 'every-student-thrives')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Every Type of Student Thrives</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'every-student-thrives' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'every-student-thrives' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'every-student-thrives' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                      <div className="text-center">
+                        <div className="text-3xl font-bold text-blue-400 mb-2">3.9x</div>
+                        <p className="text-white/80 font-medium mb-1">Gifted Kids</p>
+                        <p className="text-white/60 text-sm">Learn 3.9x faster when not held back</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-3xl font-bold text-blue-400 mb-2">2.6x</div>
+                        <p className="text-white/80 font-medium mb-1">Regular Kids</p>
+                        <p className="text-white/60 text-sm">Learn 2.6x faster with personal help</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-3xl font-bold text-blue-400 mb-2">2.2x</div>
+                        <p className="text-white/80 font-medium mb-1">Every Kid</p>
+                        <p className="text-white/60 text-sm">Minimum 2.2x improvement for all</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Kids Catching Up */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'kids-catching-up' ? null : 'kids-catching-up')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Kids Catching Up</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'kids-catching-up' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'kids-catching-up' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'kids-catching-up' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-white/60">Learning Speed</span>
+                        <span className="text-2xl font-bold text-blue-400">4.6x</span>
+                      </div>
+                      <p className="text-white/50 text-sm">Seven boys started 2 years behind. They caught up in 6 months.</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Low Income Students */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'low-income-students' ? null : 'low-income-students')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Low Income Students</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'low-income-students' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'low-income-students' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'low-income-students' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-white/60">Learning Speed</span>
+                        <span className="text-2xl font-bold text-blue-400">2.1x</span>
+                      </div>
+                      <p className="text-white/50 text-sm">Math: 31st → 84th percentile. Reading: 31st → 71st percentile. One year.</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Achievement Scores by Grade */}
+              <motion.div
+                {...getMobileAwareAnimationProps()}
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setSpecialCasesOpenIndex(specialCasesOpenIndex === 'achievement-by-grade' ? null : 'achievement-by-grade')}
+                  className="w-full px-6 md:px-8 py-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <h4 className="text-lg md:text-xl font-semibold text-white/90 text-left">Achievement Scores by Grade</h4>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: specialCasesOpenIndex === 'achievement-by-grade' ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-white/40"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: specialCasesOpenIndex === 'achievement-by-grade' ? "auto" : 0,
+                    opacity: specialCasesOpenIndex === 'achievement-by-grade' ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="border-b border-white/10">
+                            <th className="text-left text-white/60 font-medium py-2 px-4">Grade</th>
+                            <th className="text-center text-white/60 font-medium py-2 px-4">Language</th>
+                            <th className="text-center text-white/60 font-medium py-2 px-4">Math</th>
+                            <th className="text-center text-white/60 font-medium py-2 px-4">Reading</th>
+                            <th className="text-center text-white/60 font-medium py-2 px-4">Science</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            ["K", "-", "99", "99", "-"],
+                            ["1", "-", "99", "99", "-"],
+                            ["2", "99", "99", "99", "99"],
+                            ["3", "99", "96", "99", "99"],
+                            ["4", "99", "94", "99", "99"],
+                            ["5", "99", "99", "99", "99"],
+                            ["6", "99", "99", "99", "99"],
+                            ["7", "99", "99", "99", "99"],
+                            ["8", "99", "97", "99", "99"],
+                            ["9", "99", "99", "99", "99"],
+                            ["10", "99", "99", "99", "99"],
+                            ["11", "99", "98", "99", "99"],
+                          ].map((row, index) => (
+                            <tr
+                              key={row[0]}
+                              className={`border-b border-white/5 hover:bg-white/[0.04] transition-colors ${
+                                index % 2 === 1 ? "bg-white/[0.02]" : ""
+                              }`}
+                            >
+                              <td className="text-white/80 py-3 px-4 font-medium">{row[0]}</td>
+                              <td className="text-center text-white/60 py-3 px-4">{row[1]}</td>
+                              <td className="text-center text-white/60 py-3 px-4">{row[2]}</td>
+                              <td className="text-center text-white/60 py-3 px-4">{row[3]}</td>
+                              <td className="text-center text-white/60 py-3 px-4">{row[4]}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <p className="text-white/40 text-xs mt-4">
+                      * MAP test scores. Same test millions of American students take each year.
+                    </p>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+
+            {/* Still Skeptical? Read the Full Research */}
             <motion.div
               {...getMobileAwareAnimationProps()}
-              className="mt-8 p-6 bg-blue-500/10 border border-blue-500/20 rounded-2xl max-w-3xl mx-auto"
+              className="mt-12 bg-gradient-to-br from-blue-500/10 to-blue-600/5 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 max-w-3xl mx-auto"
             >
-              <p className="text-blue-300 text-base font-medium text-center">
-                TimeBack is not just about academic performance. It's about creating a love for learning that lasts a lifetime.
+              <h3 className="text-xl md:text-2xl font-semibold text-white/90 mb-4 text-center">
+                Still Skeptical? Read the Full Research.
+              </h3>
+              <p className="text-white/70 text-base mb-6 text-center">
+                Every claim. Every statistic. Every breakthrough. Documented in our comprehensive white paper.
+                <br />
+                <span className="text-white/50 text-sm">
+                  See the methodology. Check the data. Verify the results.
+                </span>
               </p>
+              <div className="text-center">
+                <a
+                  href="https://heyzine.com/flip-book/2hourlearning.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full transition-all duration-200 transform hover:scale-[1.02]"
+                >
+                  <span>Read the 2 Hour Learning White Paper</span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="mt-0.5"
+                  >
+                    <path
+                      d="M6 3L11 8L6 13"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
